@@ -10,8 +10,8 @@
     .navbar-toggler {
         font-size: 80%;
         padding: 0.75rem;
-        color: $teal;
-        border: $border-width solid $teal;
+        color: $lighter-blue;
+        border: $border-width solid $lighter-blue;
         
         svg {
             padding-left: 0.25rem;
@@ -47,7 +47,7 @@
             .nav-link {
                 &:hover {
                     // color: fade($teal, 10%);
-                    color: lighten($teal, 20%);
+                    color: $lighter-blue;
                     outline: none;
                     background-color: transparent;
                 }
@@ -56,7 +56,7 @@
                 &:focus {
                     outline: none;
                     background-color: transparent;
-                    color: $teal;
+                    color: darken($lighter-blue, 10%);
                 }
             }
         }
@@ -99,7 +99,7 @@
             background-color: $blue;
 
             .navbar-brand {
-                color: $teal;
+                color: $lighter-blue;
 
                 img.logo-dark {
                     display: none;
@@ -115,17 +115,17 @@
                 border-bottom: 0.25rem solid transparent;
 
                 &:hover {
-                    color: $teal
+                    color: $lighter-blue
                 }
 
                 &:active {
-                    color: darken($teal, 15%);
+                    color: $lighter-blue;
                 }
 
                 &.active {
-                    color: $teal;
+                    color: $lighter-blue;
                     outline: none;
-                    border-bottom: 0.25rem solid $teal;
+                    border-bottom: 0.25rem solid $lighter-blue;
                 }
             }
         }

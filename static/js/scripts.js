@@ -12,6 +12,7 @@ window.addEventListener('DOMContentLoaded', event => {
     // Navbar shrink function
     var navbarShrink = function () {
         const navbarCollapsible = document.body.querySelector('#mainNav');
+
         if (!navbarCollapsible) {
             return;
         }
@@ -21,6 +22,24 @@ window.addEventListener('DOMContentLoaded', event => {
             navbarCollapsible.classList.add('navbar-shrink')
         }
 
+        var element = document.getElementById('gradient');
+
+        var distanceToTop = window.pageYOffset + element.getBoundingClientRect().top;
+        // console.log(`distanceToTop: ${distanceToTop}`)
+        var elementHeight = element.offsetHeight;
+        // console.log(`elementHeight: ${elementHeight}`)
+        var scrollTop = document.documentElement.scrollTop;
+        // console.log(`scrollTop: ${scrollTop}`)
+        var opacity = 1;
+        
+        if (scrollTop > distanceToTop) {
+            opacity = 1 - (scrollTop - distanceToTop) / elementHeight;
+        }
+        
+        if (opacity >= 0) {
+            element.style.opacity = opacity;
+        }
+        // console.log(`opacity: ${opacity}`)
     };
 
     // Shrink the navbar 

@@ -11,11 +11,11 @@
 #gradient:before {
     content: "";
     --size: 80vw;
-    --speed: 4s;
+    --speed: 10s;
     --easing: cubic-bezier(0.0, 0.2, 0.8, 0.8);
 
     width: var(--size);
-    height: var(--size);
+    height: 70vh;
     filter: blur(calc(var(--size) / 5));
     background-image: linear-gradient(rgba($light-teal, .9), rgba($white, 0.9));
     animation: rotate var(--speed) var(--easing) alternate infinite;
@@ -30,6 +30,11 @@
     // @media (min-width: $md-breakpoint) {
     //     --size: #{$md-breakpoint};
     // }
+}
+
+#gradient.hidden:before {
+    opacity: 0%;
+    transition: all 0.5s ease-out;
 }
 
 #gradient > * {
@@ -62,6 +67,10 @@
             font-weight: bold;
         }
     }
+
+    h2 {
+        color: $teal;
+    }
 }
   
 // $layout-breakpoint-small: 960px;
@@ -79,7 +88,7 @@
   
 /* This is just to transition when you change the viewport size. */
 * {
-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
 }
   
 
@@ -92,7 +101,11 @@ transition: all 0.5s ease-out;
     width: 100%;
     height: auto;
     min-height: 35rem;
-    padding: 15rem 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 15rem;
+    padding-bottom: 6rem;
+    margin-bottom: 0.5rem;
     background: linear-gradient(to bottom,
         #{fade-out($black, 0.7)} 0%,
         #{fade-out($black, 0.3)} 75%,
@@ -105,29 +118,55 @@ transition: all 0.5s ease-out;
 
     h1 {
         font-family: $font-family-special;
-        font-size: 1.5rem;
-        line-height: 1.5rem;
-        letter-spacing: 0.8rem;
+        font-size: 4rem;
+        line-height: 4rem;
+        letter-spacing: normal;
+        max-width: 90vw;
         // -webkit-text-fill-color: $white;
         // color: $white;
     }
 
     h2 {
         max-width: 20rem;
-        font-size: 1rem;
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        max-width: 70vw;
+        font-size: 1.25rem;
     }
 
     @include media-breakpoint-up(sm) {
         h1 {
-            font-size: 2.5rem;
-            line-height: 2.5rem;
+            font-size: 4rem;
+            line-height: 4rem;
+        }
+
+        h2 {
+            max-width: 80vw;
+            font-size: 1.25rem;
+            line-height: 1.25rem;
+        }
+        h3 {
+            font-size: 1rem;
+            line-height: 1rem;
         }
     }
 
     @include media-breakpoint-up(md) {
         h1 {
-            font-size: 4rem;
-            line-height: 4rem;
+            font-size: 5rem;
+            line-height: 5rem;
+        }
+
+        h2 {
+            max-width: 80vw;
+            font-size: 1.75rem;
+            line-height: 1.75rem;
+        }
+        h3 {
+            font-size: 1.25rem;
+            line-height: 1.25rem;
         }
     }
 
@@ -142,8 +181,14 @@ transition: all 0.5s ease-out;
         }
 
         h2 {
-            max-width: 30rem;
-            font-size: 1.25rem;
+            max-width: 80vw;
+            font-size: 2.5rem;
+            line-height: 2.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            line-height: 1.5rem;
         }
     }
 }

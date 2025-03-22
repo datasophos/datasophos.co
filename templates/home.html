@@ -47,13 +47,14 @@ expanded; also remove navbarShrink() from "script.js" to override grayscale them
                     <h1 class="mx-auto my-0">
                         <span class="thin">data</span><span class="thick">sophos</span>
                     </h1>
-                    <h2 class="text-white-50 mx-auto mt-2 mb-5">
+                    <h2 class="mx-auto mt-3 text-uppercase">Wisdom from data</h2>
+                    <h3 class="text-white-50 mx-auto mt-3 mb-5">
                         {% block masthead_description %}{{ config.description }}{% endblock masthead_description %}
-                    </h2>
+                    </h3>
                     {% block masthead_button %}<a class="btn btn-primary" href="{% block masthead_button_url %}#about{% endblock masthead_button_url %}" id="{% block masthead_button_id %}getstarted{% endblock masthead_button_id %}">{% block masthead_button_label %}Learn More{% endblock masthead_button_label %}</a>{% endblock masthead_button %}
-                    <div class="mt-2">
+                    <!-- <div class="mt-2">
                         {% block submit_button %}<a class="btn btn-primary" href="{% block submit_button_button_url %}{{ get_url(path="assets/pdf/SOI_card.pdf") }}{% endblock submit_button_url %}" id="{% block submit_button_id %}submitInterestButton{% endblock submit_button_id %}">{% block submit_button_label %}Submit an interest card!{% endblock submit_button_label %}</a>{% endblock submit_button %}
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

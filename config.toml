@@ -9,7 +9,7 @@ build_search_index = true
 
 # The site title and description; used in feeds by default.
 title = "DataSophos"
-description = "Scientific data services and software engineering"
+description = "Your scientific data services and software engineering partner"
 author = "DataSophos LLC"
 
 theme = "grayscale"
