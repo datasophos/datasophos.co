@@ -1,0 +1,144 @@
+{% extends "index.html" %}
+
+{% block extra_head %}
+{% endblock extra_head %}
+
+<!-- 
+add 'navbar-shrink' class by default to the <nav> tag to make it opaque and already
+expanded; also remove navbarShrink() from "script.js" to override grayscale theme default
+-->
+{% block navigation %}
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-shrink" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="{{ get_url(path="/") }}#page-top">
+                <img class="logo-dark" src="{{ get_url(path="assets/img/datasophos_logo.png") }}"/>
+                <img class="logo-light" src="{{ get_url(path="assets/img/datasophos_wordmark_light.png") }}"/>
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    {% for item in navigation.item %}
+                    <li class="nav-itempdown">
+                        <a class="nav-link" href="{{ item.path | safe }}">{{ item.name }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% endblock navigation %}
+
+<!-- Masthead -->
+
+    <!-- 
+    change some styles in masthead for better contrast
+    and change button label
+    -->
+
+    {% block masthead %}
+    <header class="masthead">
+        <div class="container px-4 px-lg-5 d-flex h-100 align-items-start justify-content-center">
+            <div class="d-flex justify-content-center" id="gradient">
+                <div class="text-center" id="mastheadContent">
+                    <h1 class="mx-auto my-0">
+                        <span class="thin">data</span><span class="thick">sophos</span>
+                    </h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">
+                        {% block masthead_description %}{{ config.description }}{% endblock masthead_description %}
+                    </h2>
+                    {% block masthead_button %}<a class="btn btn-primary" href="{% block masthead_button_url %}#about{% endblock masthead_button_url %}" id="{% block masthead_button_id %}getstarted{% endblock masthead_button_id %}">{% block masthead_button_label %}Learn More{% endblock masthead_button_label %}</a>{% endblock masthead_button %}
+                    <div class="mt-2">
+                        {% block submit_button %}<a class="btn btn-primary" href="{% block submit_button_button_url %}{{ get_url(path="assets/pdf/SOI_card.pdf") }}{% endblock submit_button_url %}" id="{% block submit_button_id %}submitInterestButton{% endblock submit_button_id %}">{% block submit_button_label %}Submit an interest card!{% endblock submit_button_label %}</a>{% endblock submit_button %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    {% endblock masthead %}
+
+<!-- "About" section -->
+
+    {% block about_title %}Who we are{% endblock about_title %}
+
+    {% block about_description %}
+        {{ section.extra.about_description | markdown(inline=true) | safe }}
+    {% endblock about_description %}
+
+    {% block about_button %}
+    <a class="btn btn-primary" 
+        href="{% block about_button_url %}#faqs{% endblock about_button_url %}"
+        id="{% block about_button_id %}faq-button{% endblock about_button_id %}"
+        style="margin-bottom: 4rem; margin-top: -3rem;">
+        {% block about_button_label %}
+        FAQs
+        {% endblock about_button_label %}
+    </a>
+    {% endblock about_button %}
+
+    {% block about_image %}
+    <img class="img-fluid" src="{{ get_url(path="assets/img/hml_freezers.png") }}" alt="..." />
+    {% endblock about_image %}
+
+<!-- faqs section -->
+{% block faqs %}
+{% endblock faqs %}
+
+<!-- resources -->
+
+{% block resources %}
+<section class="resources-section bg-light mt-5 pb-5" id="resources">
+    <div class="container px-4 px-lg-5">
+        <h2 class="mb-2 mt-n5">Helpful resources</h2>
+        <div class="row gx-4 gx-lg-5">
+            {% for item in section.extra.resources %}
+            <div class="col-md-4 mb-3 mb-md-0 mt-3">
+                <div class="card py-4 h-100">
+                    <div class="card-body text-center">
+                        <a href="{{ item.url }}" target="_blank">
+                            <i class="fas {{ item.icon }} text-primary mb-2 fs-1"></i>
+                        </a>
+                        <a href="{{ item.url }}" target="_blank">
+                            <h4 class="text m-0">{{ item.title }}</h4>
+                        </a>
+                        <hr class="my-4 mx-auto" />
+                        <div class="small text-black-50">{{ item.description | markdown | safe }}</div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock resources %}
+
+<!-- contact information -->
+
+    <!-- remove social icons -->
+    {% block contact_social %}
+    {% endblock contact_social %}
+
+    <!-- make contact a single (centered) column for proton email address -->
+    {% block contact_contact %}
+    <div class="row gx-4 gx-lg-5 mt-n7">
+    {% for item in contact.contact %}
+    <div class="col-md-4 mb-3 mb-md-0 offset-md-4">
+        <div class="card py-4 h-100">
+            <div class="card-body text-center">
+                <i class="fas {{ item.icon }} text-primary mb-2"></i>
+                <h4 class="text-uppercase m-0">{{ item.name }}</h4>
+                <hr class="my-4 mx-auto" />
+                <div class="small text-black-50">{{ item.address|safe }}</div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+    {% endblock contact_contact %}
+
+<!-- disclaimer -->
+{% block extra_footer %}
+{% endblock extra_footer %}

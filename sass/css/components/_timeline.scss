@@ -1,0 +1,131 @@
+
+// styling the timeline
+.timeline {
+    letter-spacing: 0;
+
+    .current {
+        &.timeline__item {
+            .timeline__content {
+                background: $primary-bg-subtle;
+                border: 1px solid $primary-bg-subtle;
+            }
+        }
+
+        // solid blue circle on current item
+        &.timeline__item:after {
+            border: 4px solid $blue;
+            background-color: $blue;
+        }
+
+        // colored downward arrow for top ones
+        &.timeline__item.timeline__item--top .timeline__content {
+            &:before{
+                border-top:  12px solid $primary-bg-subtle;
+            }
+
+            &:after{
+                border-top: 10px solid $primary-bg-subtle;
+            }
+        }
+
+        // colored upward arrow for bottom items
+        &.timeline__item.timeline__item--bottom .timeline__content {
+            &:before{
+                border-bottom:  12px solid $primary-bg-subtle;
+            }
+
+            &:after{
+                border-bottom: 10px solid $primary-bg-subtle;
+            }
+        }
+
+        // colored left arrow for right items
+        &.timeline__item.timeline__item--right .timeline__content {
+            &:before{
+                border-left:  12px solid $primary-bg-subtle;
+                border-right: none;
+            }
+
+            &:after{
+                border-left: 10px solid $primary-bg-subtle;
+                border-right: none;
+            }
+        }
+
+        // colored left arrow for left items
+        &.timeline__item.timeline__item--left .timeline__content {
+            &:before{
+                border-right:  12px solid $primary-bg-subtle;
+                border-left: none;
+            }
+
+            &:after{
+                border-right: 10px solid $primary-bg-subtle;
+                border-left: none;
+            }
+        }
+    }
+
+    .done {
+        &.timeline__item {
+            .timeline__content {
+                background: $primary-bg-subtler;
+                border: 1px solid $primary-bg-subtler;
+            }
+        }
+
+        // solid blue circle on current item
+        &.timeline__item:after {
+            border: 4px solid $blue-subtle;
+            background-color: $blue-subtle;
+        }
+
+        // colored downward arrow for top ones
+        &.timeline__item.timeline__item--top .timeline__content {
+            &:before{
+                border-top:  12px solid $primary-bg-subtler;
+            }
+
+            &:after{
+                border-top: 10px solid $primary-bg-subtler;
+            }
+        }
+
+        // colored upward arrow for bottom items
+        &.timeline__item.timeline__item--bottom .timeline__content {
+            &:before{
+                border-bottom:  12px solid $primary-bg-subtler;
+            }
+
+            &:after{
+                border-bottom: 10px solid $primary-bg-subtler;
+            }
+        }
+
+        // colored left arrow for right items
+        &.timeline__item.timeline__item--right .timeline__content {
+            &:before{
+                border-left:  12px solid $primary-bg-subtler;
+                border-right: none;
+            }
+
+            &:after{
+                border-left: 10px solid $primary-bg-subtler;
+                border-right: none;
+            }
+        }
+
+        // colored left arrow for left items
+        &.timeline__item.timeline__item--left .timeline__content {
+            &:before{
+                border-right:  12px solid $primary-bg-subtler;
+                border-left: none;
+            }
+
+            &:after{
+                border-right: 10px solid $primary-bg-subtler;
+                border-left: none;
+            }
+        }
+    }
+}

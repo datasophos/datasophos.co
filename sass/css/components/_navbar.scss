@@ -1,0 +1,133 @@
+// 
+// Navbar
+// 
+
+#mainNav {
+    min-height: 72px;
+    min-height: 3.5rem;
+    background-color: $blue;
+
+    .navbar-toggler {
+        font-size: 80%;
+        padding: 0.75rem;
+        color: $teal;
+        border: $border-width solid $teal;
+        
+        svg {
+            padding-left: 0.25rem;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .navbar-brand {
+        color: $teal;
+        font-weight: 700;
+        padding: 0;
+
+        img {
+            height: 3.5rem;
+
+            &.logo-dark {
+                display: none;
+            }
+            &.logo-light {
+                display: inline;
+            }
+        }
+    }
+
+    .navbar-nav {
+        color: $white;
+
+        .nav-item,
+        .nav-itempdown {
+            .nav-link {
+                &:hover {
+                    // color: fade($teal, 10%);
+                    color: lighten($teal, 20%);
+                    outline: none;
+                    background-color: transparent;
+                }
+
+                &.active,
+                &:focus {
+                    outline: none;
+                    background-color: transparent;
+                    color: $teal;
+                }
+            }
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding-top: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+        background-color: transparent;
+        transition: background-color 0.3s ease-in-out;
+
+        .navbar-brand {
+            padding: 0;
+            color: $teal;
+
+            img.logo-dark {
+                display: inline;
+            }
+            img.logo-light {
+                display: none;
+            }
+        }
+
+        .nav-link {
+            transition: none;
+            padding: 2rem 1.5rem;
+            color: $white;
+
+            &:hover {
+                color: $white;
+            }
+
+            &:active {
+                color: $white;
+            }
+        }
+
+        &.navbar-shrink {
+            background-color: $blue;
+
+            .navbar-brand {
+                color: $teal;
+
+                img.logo-dark {
+                    display: none;
+                }
+                img.logo-light {
+                    display: inline;
+                }
+            }
+
+            .nav-link {
+                color: $white;
+                padding: 2rem 1.5rem;
+                border-bottom: 0.25rem solid transparent;
+
+                &:hover {
+                    color: $teal
+                }
+
+                &:active {
+                    color: darken($teal, 15%);
+                }
+
+                &.active {
+                    color: $teal;
+                    outline: none;
+                    border-bottom: 0.25rem solid $teal;
+                }
+            }
+        }
+    }
+}

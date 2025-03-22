@@ -1,0 +1,79 @@
+//
+// Colors
+// 
+
+// Color system
+
+// Grayscale
+
+$white: #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black: #000;
+
+// Colors
+
+$teal: #1460af;
+$light-teal: #72aeee;
+$red: #ffbbbf;
+$purple: #7464a1;
+$yellow: #e4c662;
+$green: #67c29c;
+$cyan: #1cabc4;
+$blue: #071d46;
+$lighter-blue: #bfd5ff;
+$light-blue: #1a4480;
+
+// State colors
+
+$primary: $light-blue;
+$secondary: $teal;
+$success: $green;
+$info: $cyan;
+$warning: $yellow;
+$danger: $red;
+$light: $gray-100;
+$dark: $gray-900;
+
+// Bootstrap color map
+
+$theme-colors: ("primary": $primary,
+    "secondary": $secondary,
+    "success": $success,
+    "info": $info,
+    "warning": $warning,
+    "danger": $danger,
+    "light": $light,
+    "dark": $dark);
+
+// Expanded color map
+
+$expanded-colors: ('black': $black,
+    'white': $white,
+    'navbar-color': $white,
+    'bs-navbar-color': $white,
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $expanded-colors);
+
+// Override Bootstrap contrast ratio
+
+$min-contrast-ratio: 2.5;
+$bs-navbar-color: $white;
+$navbar-light-color: darken($white, 15%);
+
+@function tint-color($color, $weight) {
+    @return mix(white, $color, $weight);
+}
+
+$primary-bg-subtle: tint-color($blue, 80%) !default;
+$primary-bg-subtler: tint-color($blue, 92.5%) !default;
+$blue-subtle: tint-color($blue, 70%) !default;

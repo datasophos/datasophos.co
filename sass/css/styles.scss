@@ -1,0 +1,39 @@
+// 
+// Styles
+// 
+
+// Import variables
+@import "./variables.scss";
+
+// Import Bootstrap
+@import "bootstrap/scss/bootstrap.scss";
+
+// Global CSS
+@import "./global.scss";
+
+// Components
+@import "./components/navbar.scss";
+@import "./components/buttons.scss";
+@import "./components/accordion.scss";
+@import "./components/timeline";
+
+// Sections
+@import "./sections/masthead.scss";
+@import "./sections/about.scss";
+@import "./sections/projects.scss";
+@import "./sections/signup.scss";
+@import "./sections/contact.scss";
+@import "./sections/footer.scss";
+
+$enable-negative-margins: true;
+
+#contact p {
+    color: $white;
+}
+
+// disable check mark on optional form elements
+.signup-section .form-signup {
+    input.optional, textarea.optional {
+        background-image: none;
+    }
+}

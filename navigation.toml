@@ -1,0 +1,12 @@
+[[item]]
+name = "About Us"
+path = "/#about"
+[[item]]
+name = "FAQs"
+path = "/#faqs"
+[[item]]
+name = "Resources"
+path = "/#resources"
+[[item]]
+name = "Contact"
+path = "/#contact"
