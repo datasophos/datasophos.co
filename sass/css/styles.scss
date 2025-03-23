@@ -37,3 +37,28 @@ $enable-negative-margins: true;
         background-image: none;
     }
 }
+
+.datasophos {
+    font-family: $font-family-special;
+    &.dark {
+        .thin { 
+            color: $black;
+        }
+        .thick {
+            color: $blue;
+        }
+    }
+
+    &.light {
+        color: lighten($lighter-blue, 7%);
+    }
+
+    .thin {
+        font-weight: 300;
+    }
+
+    .thick {
+        font-weight: bold;
+    }
+    
+}

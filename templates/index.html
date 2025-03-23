@@ -1,6 +1,7 @@
 {% import "macros/debug.html" as debug %}
 {% import "macros/head.html" as head %}
 {% import "macros/analytics.html" as analytics %}
+{% import "macros/datasophos.html" as datasophos %}
 
 {% set navigation = load_data(path="navigation.toml") %}
 {% set contact = load_data(path="contact.toml") %}
@@ -68,9 +69,33 @@
     </header>
     {% endblock masthead %}
     {% block content %}
+    {% block services %}
+    <!-- Services -->
+    <section class="services-section text-center" id="{% block services_id %}services{% endblock services_id %}">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="text-white mb-4">{% block services_title %}Built with Bootstrap 5{% endblock services_title %}</h2>
+                    <p class="text-white-50">
+                        {% block services_description %}
+                            {{ config.title }} is a free port Bootstrap theme created by Start Bootstrap. It can be yours right now, simply download the theme into your Zola themes from
+                            <a href="https://startbootstrap.com/theme/grayscale/">GitHub.</a>
+                            The theme is open source, and you can use it for any purpose, personal or commercial.
+                        {% endblock services_description %}
+                    </p>
+                    {% block services_button %}
+                    {% endblock services_button %}
+                </div>
+            </div>
+            {% block services_image %}
+            <img class="img-fluid" src="{{ get_url(path="assets/img/ipad.png") }}" alt="..." />
+            {% endblock services_image %}
+        </div>
+    </section>
+    {% endblock services %}
     {% block about %}
-    <!-- About -->
-    <section class="about-section text-center" id="{% block about_id %}about{% endblock about_id %}">
+    <!-- About us -->
+    <section class="about-section text-center" id="{% block about_id %}about-us{% endblock about_id %}">
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8">
@@ -92,8 +117,6 @@
         </div>
     </section>
     {% endblock about %}
-    {% block faqs %}
-    {% endblock faqs %}
     {% block resources %}
         <section class="resources-section bg-light pb-5" id="resources">
             <div class="container px-4 px-lg-5">
@@ -109,7 +132,7 @@
             <div class="row gx-4 gx-lg-5">
                 <div class="col-md-10 col-lg-8 mx-auto text-center">
                     <i class="fa-regular {% block signup_icon %}fa-paper-plane{% endblock signup_icon %} fa-2x mb-2 text-white"></i>
-                    <h2 class="text-white mb-5">{% block signup_title %}Reach out to {{ config.title }}!{% endblock signup_title %}</h2>
+                    <h2 class="text-white mb-5">{% block signup_title %}Reach out to {{ datasophos::logo(theme="light") }}{% endblock signup_title %}</h2>
                     <p class="mt-n4 mb-4">
                         If you are interested in learning more about our unionizing efforts,
                         please enter your email address below, and one of our organizers will
@@ -222,7 +245,7 @@
     {% block footer %}
     <!-- Footer -->
     <footer class="footer bg-black small text-center text-white-50">
-        <div class="container px-4 px-lg-5">{% block footer_copyright %}Copyright &copy; {{ config.author }} {{ now() | date(format="%Y") }}{% endblock footer_copyright %}</div>
+        <div class="container px-4 px-lg-5">{% block footer_copyright %}&copy; CC-BY-SA-4.0 — {{ config.author }} {{ now() | date(format="%Y") }}{% endblock footer_copyright %}</div>
         {% block extra_footer %}{% endblock extra_footer %}
         {% block footer_debug %}{{ debug::debug(context=__tera_context, name="__tera_context") }}{% endblock footer_debug %}
     </footer>

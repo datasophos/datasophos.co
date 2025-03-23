@@ -49,6 +49,7 @@
                     // color: fade($teal, 10%);
                     color: $lighter-blue;
                     outline: none;
+                    font-weight: bold;
                     background-color: transparent;
                 }
 
@@ -87,11 +88,11 @@
             color: $white;
 
             &:hover {
-                color: $white;
+                color: $blue !important;
             }
 
             &:active {
-                color: $white;
+                color: $blue !important;
             }
         }
 
@@ -115,7 +116,8 @@
                 border-bottom: 0.25rem solid transparent;
 
                 &:hover {
-                    color: $lighter-blue
+                    color: $lighter-blue !important;
+                    font-weight: normal;
                 }
 
                 &:active {
