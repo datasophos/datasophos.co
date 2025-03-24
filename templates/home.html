@@ -49,70 +49,131 @@ expanded; also remove navbarShrink() from "script.js" to override grayscale them
                     <h3 class="text-white-50 mx-auto mt-3 mb-5">
                         {% block masthead_description %}{{ config.description }}{% endblock masthead_description %}
                     </h3>
-                    {% block masthead_button %}<a class="btn btn-primary" href="{% block masthead_button_url %}#services{% endblock masthead_button_url %}" id="{% block masthead_button_id %}getstarted{% endblock masthead_button_id %}">{% block masthead_button_label %}Learn More{% endblock masthead_button_label %}</a>{% endblock masthead_button %}
-                    <!-- <div class="mt-2">
-                        {% block submit_button %}<a class="btn btn-primary" href="{% block submit_button_button_url %}{{ get_url(path="assets/pdf/SOI_card.pdf") }}{% endblock submit_button_url %}" id="{% block submit_button_id %}submitInterestButton{% endblock submit_button_id %}">{% block submit_button_label %}Submit an interest card!{% endblock submit_button_label %}</a>{% endblock submit_button %}
-                    </div> -->
+                    {% block masthead_button %}<a class="btn btn-primary" href="{% block masthead_button_url %}#about-us{% endblock masthead_button_url %}" id="{% block masthead_button_id %}getstarted{% endblock masthead_button_id %}">{% block masthead_button_label %}Learn More{% endblock masthead_button_label %}</a>{% endblock masthead_button %}
                 </div>
             </div>
         </div>
     </header>
     {% endblock masthead %}
 
-<!-- "Services" section -->
 
-    {% block about_title %}Who we are{% endblock about_title %}
+    {% block about %}
+    <!-- About us -->
+    <section class="about-section text-center" id="{% block about_id %}about-us{% endblock about_id %}">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-9">
+                    <h2 class="text-white mb-4">{% block about_title %}About us{% endblock about_title %}</h2>
+                    <p class="text-white-50">
+                        {% block about_description %}
+                            {{ datasophos::logo(theme="light") }} is a boutique data and scientific software consultancy
+                            focused on helping companies, organizations, and research laboratories leverage state of
+                            the art data tools to drive innovation and growth.<br/><br/>
 
-    {% block about_description %}
-        {{ section.extra.about_description | markdown(inline=true) | safe }}
-    {% endblock about_description %}
-
-    {% block about_button %}
-    <a class="btn btn-primary" 
-        href="{% block about_button_url %}#faqs{% endblock about_button_url %}"
-        id="{% block about_button_id %}faq-button{% endblock about_button_id %}"
-        style="margin-bottom: 4rem; margin-top: -3rem;">
-        {% block about_button_label %}
-        FAQs
-        {% endblock about_button_label %}
-    </a>
-    {% endblock about_button %}
-
-    {% block about_image %}
-    <img class="img-fluid" src="{{ get_url(path="assets/img/hml_freezers.png") }}" alt="..." />
-    {% endblock about_image %}
-
-<!-- faqs section -->
-{% block faqs %}
-{% endblock faqs %}
-
-<!-- resources -->
-
-{% block resources %}
-<section class="resources-section bg-light mt-5 pb-5" id="resources">
-    <div class="container px-4 px-lg-5">
-        <h2 class="mb-2 mt-n5">Helpful resources</h2>
-        <div class="row gx-4 gx-lg-5">
-            {% for item in section.extra.resources %}
-            <div class="col-md-4 mb-3 mb-md-0 mt-3">
-                <div class="card py-4 h-100">
-                    <div class="card-body text-center">
-                        <a href="{{ item.url }}" target="_blank">
-                            <i class="fas {{ item.icon }} text-primary mb-2 fs-1"></i>
-                        </a>
-                        <a href="{{ item.url }}" target="_blank">
-                            <h4 class="text m-0">{{ item.title }}</h4>
-                        </a>
-                        <hr class="my-4 mx-auto" />
-                        <div class="small text-black-50">{{ item.description | markdown | safe }}</div>
-                    </div>
+                            We leverage a unique blend of technical expertise and domain knowledge to help 
+                            organizations unlock the full potential of their data. 
+                            With a focus on collaboration, transparency, and community engagement, 
+                            we specialize in designing and implementing customized solutions that leverage open-source 
+                            technologies to drive business value, scientific discovery, and understanding from complex data.<br/><br/>
+                            
+                        {% endblock about_description %}
+                    </p>
+                    {% block about_button %}
+                        <a class="btn btn-primary" href="#services" id="servicesButton">Learn about Our services</a>
+                    {% endblock about_button %}
                 </div>
             </div>
-            {% endfor %}
+            <!-- {% block about_image %}
+                <img class="img-fluid" src="{{ get_url(path="assets/img/data_image.png") }}" alt="..." />
+            {% endblock about_image %} -->
         </div>
-    </div>
-</section>
-{% endblock resources %}
+    </section>
+    {% endblock about %}
+
+
+    {% block services %}
+    <!-- services-->
+    <section class="services-section bg-light" id="{% block services_id %}services{% endblock services_id %}">
+        <div class="container px-4 px-lg-5">
+            {% block feature_service %}
+            <!-- Featured Project Row -->
+            <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                <div class="col-xl-8 col-lg-7">
+                    {% block feature_service_thumbnail %}
+                    <img class="img-fluid mb-3 mb-lg-0" src="{{ get_url(path="assets/img/bg-masthead.jpg") }}" alt="...">
+                    {% endblock feature_service_thumbnail %}
+                </div>
+                <div class="col-xl-4 col-lg-5">
+                    {% block feature_service_content %}
+                    <div class="featured-text text-center text-lg-left">
+                        <h4>{% block feature_service_title %}Shoreline{% endblock feature_service_title %}</h4>
+                        <p class="text-black-50 mb-0">
+                        {% block feature_service_description %}
+                        {{ config.title }} is open source and MIT licensed. This means you can use it for any project
+                        - even commercial services! Download it, customize it, and publish your website!
+                        {% endblock feature_service_description %}
+                        </p>
+                    </div>
+                    {% endblock feature_service_content %}
+                </div>
+            </div>
+            {% endblock feature_service %}
+            {% block service_1 %}
+            <!-- Project One Row -->
+            <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+                <div class="col-lg-6">
+                    {% block service_1_thumbnail %}
+                    <img class="img-fluid" src="{{ get_url(path="assets/img/demo-image-01.jpg") }}" alt="...">
+                    {% endblock service_1_thumbnail %}
+                </div>
+                <div class="col-lg-6">
+                    {% block service_1_content %}
+                    <div class="bg-black text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-left">
+                                <h4 class="text-white">{% block service_1_title %}Misty{% endblock service_1_title %}</h4>
+                                <p class="mb-0 text-white-50">
+                                {% block service_1_description %}
+                                An example of where you can put an image of a project, or anything else, along with a description.
+                                {% endblock service_1_description %}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endblock service_1_content %}
+                </div>
+            </div>
+            {% endblock service_1 %}
+            {% block service_2 %}
+            <!-- Project Two Row -->
+            <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+                <div class="col-lg-6">
+                    {% block service_2_thumbnail %}
+                    <img class="img-fluid" src="{{ get_url(path="assets/img/demo-image-02.jpg") }}" alt="...">
+                    {% endblock service_2_thumbnail %}
+                </div>
+                <div class="col-lg-6 order-lg-first">
+                    {% block service_2_content %}
+                    <div class="bg-black text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-right">
+                                <h4 class="text-white">{% block service_2_title %}Mountains{% endblock service_2_title %}</h4>
+                                <p class="mb-0 text-white-50">
+                                {% block service_2_description %}
+                                Another example of a project with its respective description. These sections work well responsively as well!
+                                {% endblock service_2_description %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endblock service_2_content %}
+                </div>
+            </div>
+            {% endblock service_2 %}
+            {% block extra_services %}{% endblock extra_services %}
+        </div>
+    </section>
+    {% endblock services %}
+
 
 <!-- contact information -->
 

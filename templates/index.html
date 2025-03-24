@@ -69,30 +69,7 @@
     </header>
     {% endblock masthead %}
     {% block content %}
-    {% block services %}
-    <!-- Services -->
-    <section class="services-section text-center" id="{% block services_id %}services{% endblock services_id %}">
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-lg-8">
-                    <h2 class="text-white mb-4">{% block services_title %}Built with Bootstrap 5{% endblock services_title %}</h2>
-                    <p class="text-white-50">
-                        {% block services_description %}
-                            {{ config.title }} is a free port Bootstrap theme created by Start Bootstrap. It can be yours right now, simply download the theme into your Zola themes from
-                            <a href="https://startbootstrap.com/theme/grayscale/">GitHub.</a>
-                            The theme is open source, and you can use it for any purpose, personal or commercial.
-                        {% endblock services_description %}
-                    </p>
-                    {% block services_button %}
-                    {% endblock services_button %}
-                </div>
-            </div>
-            {% block services_image %}
-            <img class="img-fluid" src="{{ get_url(path="assets/img/ipad.png") }}" alt="..." />
-            {% endblock services_image %}
-        </div>
-    </section>
-    {% endblock services %}
+
     {% block about %}
     <!-- About us -->
     <section class="about-section text-center" id="{% block about_id %}about-us{% endblock about_id %}">
@@ -117,13 +94,32 @@
         </div>
     </section>
     {% endblock about %}
-    {% block resources %}
-        <section class="resources-section bg-light pb-5" id="resources">
-            <div class="container px-4 px-lg-5">
-                <h2 class="mb-5 mt-n6">Helpful resources</h2>
+    
+    {% block services %}
+    <!-- Services -->
+    <section class="about-section text-center" id="{% block services_id %}services{% endblock services_id %}">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="text-white mb-4">{% block services_title %}Built with Bootstrap 5{% endblock services_title %}</h2>
+                    <p class="text-white-50">
+                        {% block services_description %}
+                            {{ config.title }} is a free port Bootstrap theme created by Start Bootstrap. It can be yours right now, simply download the theme into your Zola themes from
+                            <a href="https://startbootstrap.com/theme/grayscale/">GitHub.</a>
+                            The theme is open source, and you can use it for any purpose, personal or commercial.
+                        {% endblock services_description %}
+                    </p>
+                    {% block services_button %}
+                    {% endblock services_button %}
+                </div>
             </div>
-        </section>
-    {% endblock resources %}
+            {% block services_image %}
+            <img class="img-fluid" src="{{ get_url(path="assets/img/ipad.png") }}" alt="..." />
+            {% endblock services_image %}
+        </div>
+    </section>
+    {% endblock services %}
+    
     {% endblock content %}
     {% block signup %}
     <!-- Signup -->
@@ -245,7 +241,11 @@
     {% block footer %}
     <!-- Footer -->
     <footer class="footer bg-black small text-center text-white-50">
-        <div class="container px-4 px-lg-5">{% block footer_copyright %}&copy; CC-BY-SA-4.0 — {{ config.author }} {{ now() | date(format="%Y") }}{% endblock footer_copyright %}</div>
+        <div class="container px-4 px-lg-5">
+            {% block footer_copyright %}
+                <div>&copy; CC-BY-SA-4.0 — {{ config.author }} {{ now() | date(format="%Y") }}</div>
+                <div><a target="_blank" href="https://commons.wikimedia.org/w/index.php?curid=3267545">Photo credit</a></div>
+            {% endblock footer_copyright %}</div>
         {% block extra_footer %}{% endblock extra_footer %}
         {% block footer_debug %}{{ debug::debug(context=__tera_context, name="__tera_context") }}{% endblock footer_debug %}
     </footer>

@@ -1,9 +1,9 @@
 [[item]]
-name = "Services"
-path = "/#services"
-[[item]]
 name = "About Us"
 path = "/#about-us"
+[[item]]
+name = "Services"
+path = "/#services"
 [[item]]
 name = "Contact"
 path = "/#contact"
