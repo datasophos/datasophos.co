@@ -3,7 +3,21 @@
 // 
 
 .services-section {
-    padding: 10rem 0;
+    padding: 5rem 0;
+    letter-spacing: normal;
+
+    h5 {
+        .fa-solid,
+        .fa-brands,
+        .fa-sharp-solid,
+        .svg-inline--fa {
+            margin-right: .5em;
+        }
+    }
+
+    .intro-text {
+        font-size: 110%;
+    }
 
     .featured-text {
         padding: 2rem;

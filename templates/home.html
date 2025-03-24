@@ -68,7 +68,7 @@ expanded; also remove navbarShrink() from "script.js" to override grayscale them
                         {% block about_description %}
                             {{ datasophos::logo(theme="light") }} is a boutique data and scientific software consultancy
                             focused on helping companies, organizations, and research laboratories leverage state of
-                            the art data tools to drive innovation and growth.<br/><br/>
+                            the art data methods to drive innovation and growth.<br/><br/>
 
                             We leverage a unique blend of technical expertise and domain knowledge to help 
                             organizations unlock the full potential of their data. 
@@ -95,91 +95,59 @@ expanded; also remove navbarShrink() from "script.js" to override grayscale them
     <!-- services-->
     <section class="services-section bg-light" id="{% block services_id %}services{% endblock services_id %}">
         <div class="container px-4 px-lg-5">
-            {% block feature_service %}
-            <!-- Featured Project Row -->
-            <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                <div class="col-xl-8 col-lg-7">
-                    {% block feature_service_thumbnail %}
-                    <img class="img-fluid mb-3 mb-lg-0" src="{{ get_url(path="assets/img/bg-masthead.jpg") }}" alt="...">
-                    {% endblock feature_service_thumbnail %}
-                </div>
-                <div class="col-xl-4 col-lg-5">
-                    {% block feature_service_content %}
-                    <div class="featured-text text-center text-lg-left">
-                        <h4>{% block feature_service_title %}Shoreline{% endblock feature_service_title %}</h4>
-                        <p class="text-black-50 mb-0">
-                        {% block feature_service_description %}
-                        {{ config.title }} is open source and MIT licensed. This means you can use it for any project
-                        - even commercial services! Download it, customize it, and publish your website!
-                        {% endblock feature_service_description %}
-                        </p>
+            <h2 class="mb-3">What we offer</h2>
+            <p class="intro-text mb-4">
+                {{ datasophos::logo(theme="dark") }} can help with a wide range of services
+                in the data landscape. Our expertise is built from decades of leadership in
+                the open source and scientific communities, and we are committed to continued
+                advancement in these areas. While our open source work is free for anyone to use and
+                extend, we offer personal consulting services on an hourly or fixed-fee basis
+                to those looking for help doing so. Some of our areas of expertise are: 
+            </p>
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col">
+                  <div class="card">
+                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                      <h5 class="card-title"><i class="fa fas fa-swatchbook"></i> Data modeling and design</h5>
+                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                     </div>
-                    {% endblock feature_service_content %}
+                  </div>
                 </div>
-            </div>
-            {% endblock feature_service %}
-            {% block service_1 %}
-            <!-- Project One Row -->
-            <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-                <div class="col-lg-6">
-                    {% block service_1_thumbnail %}
-                    <img class="img-fluid" src="{{ get_url(path="assets/img/demo-image-01.jpg") }}" alt="...">
-                    {% endblock service_1_thumbnail %}
-                </div>
-                <div class="col-lg-6">
-                    {% block service_1_content %}
-                    <div class="bg-black text-center h-100 project">
-                        <div class="d-flex h-100">
-                            <div class="project-text w-100 my-auto text-center text-lg-left">
-                                <h4 class="text-white">{% block service_1_title %}Misty{% endblock service_1_title %}</h4>
-                                <p class="mb-0 text-white-50">
-                                {% block service_1_description %}
-                                An example of where you can put an image of a project, or anything else, along with a description.
-                                {% endblock service_1_description %}
-                                </p>
-                            </div>
-                        </div>
+                <div class="col">
+                  <div class="card">
+                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                      <h5 class="card-title"><i class="fa fas fa-timeline"></i> Data pipelines and workflows</h5>
+                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                     </div>
-                    {% endblock service_1_content %}
+                  </div>
                 </div>
-            </div>
-            {% endblock service_1 %}
-            {% block service_2 %}
-            <!-- Project Two Row -->
-            <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-                <div class="col-lg-6">
-                    {% block service_2_thumbnail %}
-                    <img class="img-fluid" src="{{ get_url(path="assets/img/demo-image-02.jpg") }}" alt="...">
-                    {% endblock service_2_thumbnail %}
-                </div>
-                <div class="col-lg-6 order-lg-first">
-                    {% block service_2_content %}
-                    <div class="bg-black text-center h-100 project">
-                        <div class="d-flex h-100">
-                            <div class="project-text w-100 my-auto text-center text-lg-right">
-                                <h4 class="text-white">{% block service_2_title %}Mountains{% endblock service_2_title %}</h4>
-                                <p class="mb-0 text-white-50">
-                                {% block service_2_description %}
-                                Another example of a project with its respective description. These sections work well responsively as well!
-                                {% endblock service_2_description %}
-                            </div>
-                        </div>
+                <div class="col">
+                  <div class="card">
+                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                      <h5 class="card-title"><i class="fa fas fa-computer"></i>Open source development and deployment</h5>
+                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
                     </div>
-                    {% endblock service_2_content %}
+                  </div>
                 </div>
-            </div>
-            {% endblock service_2 %}
-            {% block extra_services %}{% endblock extra_services %}
+                <div class="col">
+                  <div class="card">
+                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                      <h5 class="card-title"><i class="fa fas fa-flask-vial"></i>Data science and analysis</h5>
+                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
         </div>
     </section>
     {% endblock services %}
 
 
 <!-- contact information -->
-
-    <!-- remove social icons -->
-    {% block contact_social %}
-    {% endblock contact_social %}
 
     <!-- make contact a single (centered) column for proton email address -->
     {% block contact_contact %}
@@ -198,6 +166,13 @@ expanded; also remove navbarShrink() from "script.js" to override grayscale them
     {% endfor %}
     </div>
     {% endblock contact_contact %}
+    {% block contact_social %}
+    <div class="social d-flex justify-content-center">
+        {% for item in contact.social %}
+        <a target="_blank" class="mx-2" href="{{ item.url | safe }}"><i class="fa-brands {{ item.icon }} fa-xl" aria-hidden="true"></i></a>
+        {% endfor %}
+    </div>
+    {% endblock contact_social %}
 
 <!-- disclaimer -->
 {% block extra_footer %}

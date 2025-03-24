@@ -4,8 +4,10 @@
 
 .about-section {
     padding-top: 10rem;
-    padding-bottom: 10rem;
+    padding-bottom: 20rem;
     margin-top: -2rem;
+    font-size: 100%;
+    // letter-spacing: normal;
     background: linear-gradient(to bottom,
         $black 0%,
         #{fade-out($black, 0.1)} 75%,
