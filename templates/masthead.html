@@ -1,0 +1,20 @@
+{% import "macros/datasophos.html" as datasophos %}
+
+<header class="masthead">
+    <div class="container px-4 px-lg-5 d-flex h-100 align-items-start justify-content-center">
+        <div class="d-flex justify-content-center" id="gradient">
+            <div class="text-center" id="mastheadContent">
+                <h1 class="mx-auto my-0">{{ datasophos::logo(theme="dark") }}</h1>
+                <h2 class="mx-auto mt-3 text-uppercase">Wisdom from data</h2>
+                <h3 class="text-white-50 mx-auto mt-3 mb-5">
+                    {% block masthead_description %}{{ config.description }}{% endblock masthead_description %}
+                </h3>
+                {% block masthead_button %}<a class="btn btn-primary"
+                    href="{% block masthead_button_url %}#about-us{% endblock masthead_button_url %}"
+                    id="{% block masthead_button_id %}getstarted{% endblock masthead_button_id %}">{% block
+                    masthead_button_label %}Learn More{% endblock masthead_button_label %}</a>{% endblock
+                masthead_button %}
+            </div>
+        </div>
+    </div>
+</header>

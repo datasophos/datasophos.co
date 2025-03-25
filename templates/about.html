@@ -1,0 +1,33 @@
+{% import "macros/datasophos.html" as datasophos %}
+
+<!-- About us -->
+<section class="about-section text-center" id="{% block about_id %}about-us{% endblock about_id %}">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-9">
+                <h2 class="text-white mb-4">{% block about_title %}About us{% endblock about_title %}</h2>
+                <p class="text-white-50">
+                    {% block about_description %}
+                    {{ datasophos::logo(theme="light") }} is a boutique data and scientific software consultancy
+                    focused on helping companies, organizations, and research laboratories leverage state of
+                    the art data methods to drive innovation and growth.<br /><br />
+
+                    We leverage a unique blend of technical expertise and domain knowledge to help
+                    organizations unlock the full potential of their data.
+                    With a focus on collaboration, transparency, and community engagement,
+                    we specialize in designing and implementing customized solutions that leverage open-source
+                    technologies to drive business value, scientific discovery, and understanding from complex
+                    data.<br /><br />
+
+                    {% endblock about_description %}
+                </p>
+                {% block about_button %}
+                <a class="btn btn-primary" href="#services" id="servicesButton">Learn about Our services</a>
+                {% endblock about_button %}
+            </div>
+        </div>
+        <!-- {% block about_image %}
+                <img class="img-fluid" src="{{ get_url(path="assets/img/data_image.png") }}" alt="..." />
+            {% endblock about_image %} -->
+    </div>
+</section>

@@ -3,177 +3,47 @@
 {% block extra_head %}
 {% endblock extra_head %}
 
-<!-- 
-add 'navbar-shrink' class by default to the <nav> tag to make it opaque and already
-expanded; also remove navbarShrink() from "script.js" to override grayscale theme default
--->
 {% block navigation %}
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-shrink" id="mainNav">
-        <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="{{ get_url(path="/") }}#page-top">
-                <img class="logo-dark" src="{{ get_url(path="assets/img/datasophos_wordmark.png") }}"/>
-                <img class="logo-light" src="{{ get_url(path="assets/img/datasophos_wordmark_light.png") }}"/>
-            </a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto">
-                    {% for item in navigation.item %}
-                    <li class="nav-itempdown">
-                        <a class="nav-link" href="{{ item.path | safe }}">{{ item.name }}</a>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
-    </nav>
-    {% endblock navigation %}
+  {% include "navigation.html" %}
+{% endblock navigation %}
 
-<!-- Masthead -->
+{% block masthead %}
+  {% include "masthead.html" %}
+{% endblock masthead %}
 
-    <!-- 
-    change some styles in masthead for better contrast
-    and change button label
-    -->
+{% block about %}
+  {% include "about.html" %}
+{% endblock about %}
 
-    {% block masthead %}
-    <header class="masthead">
-        <div class="container px-4 px-lg-5 d-flex h-100 align-items-start justify-content-center">
-            <div class="d-flex justify-content-center" id="gradient">
-                <div class="text-center" id="mastheadContent">
-                    <h1 class="mx-auto my-0">{{ datasophos::logo(theme="dark") }}</h1>
-                    <h2 class="mx-auto mt-3 text-uppercase">Wisdom from data</h2>
-                    <h3 class="text-white-50 mx-auto mt-3 mb-5">
-                        {% block masthead_description %}{{ config.description }}{% endblock masthead_description %}
-                    </h3>
-                    {% block masthead_button %}<a class="btn btn-primary" href="{% block masthead_button_url %}#about-us{% endblock masthead_button_url %}" id="{% block masthead_button_id %}getstarted{% endblock masthead_button_id %}">{% block masthead_button_label %}Learn More{% endblock masthead_button_label %}</a>{% endblock masthead_button %}
-                </div>
-            </div>
-        </div>
-    </header>
-    {% endblock masthead %}
+{% block services %}
+  {% include "services.html" %}
+{% endblock services %}
 
 
-    {% block about %}
-    <!-- About us -->
-    <section class="about-section text-center" id="{% block about_id %}about-us{% endblock about_id %}">
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-lg-9">
-                    <h2 class="text-white mb-4">{% block about_title %}About us{% endblock about_title %}</h2>
-                    <p class="text-white-50">
-                        {% block about_description %}
-                            {{ datasophos::logo(theme="light") }} is a boutique data and scientific software consultancy
-                            focused on helping companies, organizations, and research laboratories leverage state of
-                            the art data methods to drive innovation and growth.<br/><br/>
-
-                            We leverage a unique blend of technical expertise and domain knowledge to help 
-                            organizations unlock the full potential of their data. 
-                            With a focus on collaboration, transparency, and community engagement, 
-                            we specialize in designing and implementing customized solutions that leverage open-source 
-                            technologies to drive business value, scientific discovery, and understanding from complex data.<br/><br/>
-                            
-                        {% endblock about_description %}
-                    </p>
-                    {% block about_button %}
-                        <a class="btn btn-primary" href="#services" id="servicesButton">Learn about Our services</a>
-                    {% endblock about_button %}
-                </div>
-            </div>
-            <!-- {% block about_image %}
-                <img class="img-fluid" src="{{ get_url(path="assets/img/data_image.png") }}" alt="..." />
-            {% endblock about_image %} -->
-        </div>
-    </section>
-    {% endblock about %}
-
-
-    {% block services %}
-    <!-- services-->
-    <section class="services-section bg-light" id="{% block services_id %}services{% endblock services_id %}">
-        <div class="container px-4 px-lg-5">
-            <h2 class="mb-3">What we offer</h2>
-            <p class="intro-text mb-4">
-                {{ datasophos::logo(theme="dark") }} can help with a wide range of services
-                in the data landscape. Our expertise is built from decades of leadership in
-                the open source and scientific communities, and we are committed to continued
-                advancement in these areas. While our open source work is free for anyone to use and
-                extend, we offer personal consulting services on an hourly or fixed-fee basis
-                to those looking for help doing so. Some of our areas of expertise are: 
-            </p>
-            <div class="row row-cols-1 row-cols-md-2 g-4">
-                <div class="col">
-                  <div class="card">
-                    <!-- <img src="..." class="card-img-top" alt="..."> -->
-                    <div class="card-body">
-                      <h5 class="card-title"><i class="fa fas fa-swatchbook"></i> Data modeling and design</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card">
-                    <!-- <img src="..." class="card-img-top" alt="..."> -->
-                    <div class="card-body">
-                      <h5 class="card-title"><i class="fa fas fa-timeline"></i> Data pipelines and workflows</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card">
-                    <!-- <img src="..." class="card-img-top" alt="..."> -->
-                    <div class="card-body">
-                      <h5 class="card-title"><i class="fa fas fa-computer"></i>Open source development and deployment</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card">
-                    <!-- <img src="..." class="card-img-top" alt="..."> -->
-                    <div class="card-body">
-                      <h5 class="card-title"><i class="fa fas fa-flask-vial"></i>Data science and analysis</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-        </div>
-    </section>
-    {% endblock services %}
-
-
-<!-- contact information -->
-
-    <!-- make contact a single (centered) column for proton email address -->
-    {% block contact_contact %}
-    <div class="row gx-4 gx-lg-5 mt-n7">
-    {% for item in contact.contact %}
-    <div class="col-md-4 mb-3 mb-md-0 offset-md-4">
-        <div class="card py-4 h-100">
-            <div class="card-body text-center">
-                <i class="fas {{ item.icon }} text-primary mb-2"></i>
-                <h4 class="text-uppercase m-0">{{ item.name }}</h4>
-                <hr class="my-4 mx-auto" />
-                <div class="small text-black-50">{{ item.address|safe }}</div>
-            </div>
+<!-- make contact a single (centered) column for proton email address -->
+{% block contact_contact %}
+<div class="row gx-4 gx-lg-5 mt-n7">
+{% for item in contact.contact %}
+<div class="col-md-4 mb-3 mb-md-0 offset-md-4">
+    <div class="card py-4 h-100">
+        <div class="card-body text-center">
+            <i class="fas {{ item.icon }} text-primary mb-2"></i>
+            <h4 class="text-uppercase m-0">{{ item.name }}</h4>
+            <hr class="my-4 mx-auto" />
+            <div class="small text-black-50">{{ item.address|safe }}</div>
         </div>
     </div>
+</div>
+{% endfor %}
+</div>
+{% endblock contact_contact %}
+{% block contact_social %}
+<div class="social d-flex justify-content-center">
+    {% for item in contact.social %}
+    <a target="_blank" class="mx-2" href="{{ item.url | safe }}"><i class="fa-brands {{ item.icon }} fa-xl" aria-hidden="true"></i></a>
     {% endfor %}
-    </div>
-    {% endblock contact_contact %}
-    {% block contact_social %}
-    <div class="social d-flex justify-content-center">
-        {% for item in contact.social %}
-        <a target="_blank" class="mx-2" href="{{ item.url | safe }}"><i class="fa-brands {{ item.icon }} fa-xl" aria-hidden="true"></i></a>
-        {% endfor %}
-    </div>
-    {% endblock contact_social %}
+</div>
+{% endblock contact_social %}
 
-<!-- disclaimer -->
 {% block extra_footer %}
 {% endblock extra_footer %}

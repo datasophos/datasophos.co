@@ -1,0 +1,108 @@
+{% import "macros/datasophos.html" as datasophos %}
+
+<!-- services-->
+<section class="services-section bg-light" id="{% block services_id %}services{% endblock services_id %}">
+    <div class="container px-4 px-lg-5">
+        <h2 class="mb-3">What we offer</h2>
+        <p class="intro-text mb-4">
+            {{ datasophos::logo(theme="dark") }} can help with a wide range of services
+            in the data landscape. Our expertise is built from decades of leadership in
+            the open source and scientific communities, and we are committed to continued
+            advancement in these areas. While our open source work is free for anyone to use and
+            extend, we offer bespoke consulting services on an hourly or fixed-fee basis
+            to those looking for help doing so. Some of our areas of expertise are as follows:
+        </p>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+                <div class="card">
+                        {{ datasophos::modal(
+                        id='dataPipelines',
+                        title='<i class="fa fas fa-timeline"></i> Data pipelines and workflows',
+                        content='') }}
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fa fas fa-timeline"></i> Data pipelines and workflows</h5>
+                            <p class="card-text mb-0">
+                                Modern organizations manage data across diverse domains, and consolidating this
+                                information
+                                can reveal previously-hidden insights.
+                                If your problems need custom data workflows, we can help.
+                            </p>
+                            <div class="text-end">
+                                <button type="button" class="btn"
+                                        data-bs-toggle="modal" data-bs-target="#dataPipelines">
+                                    Click to learn more <i class="fa fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                        {{ datasophos::modal(
+                        id='dataModeling',
+                        title='<i class="fa fas fa-swatchbook"></i> Data modeling and database design',
+                        content='') }}
+                        <!-- <img src="..." class="card-img-top" alt="..."> -->
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fa fas fa-swatchbook"></i> Data modeling and database design</h5>
+                            <p class="card-text mb-0">
+                                {{ datasophos::logo(theme="dark") }} knows that data works best when 
+                                its structure complements the needs of a given objective. 
+                                Whether you are starting a greenfield project or bringing fresh eyes
+                                to existing processes, we can help.
+                            <div class="text-end">
+                                <button type="button" class="btn"
+                                        data-bs-toggle="modal" data-bs-target="#dataModeling">
+                                    Click to learn more <i class="fa fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                        {{ datasophos::modal(
+                        id='openSource',
+                        title='<i class="fa fas fa-computer"></i> Open source development and deployment',
+                        content='') }}
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fa fas fa-computer"></i>Open source development and
+                                deployment</h5>
+                            <p class="card-text mb-0">
+                                Free software powers much of what we do at {{ datasophos::logo(theme="dark") }} and we
+                                believe strongly in the power of the open source community. If you are interested
+                                in deploying open source software or developing custom tools    , we can help.
+                            <div class="text-end">
+                                <button type="button" class="btn"
+                                        data-bs-toggle="modal" data-bs-target="#openSource">
+                                    Click to learn more <i class="fa fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                        {{ datasophos::modal(
+                        id='dataScience',
+                        title='<i class="fa fas fa-flask-vial"></i> Data science and analysis',
+                        content='') }}
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fa fas fa-flask-vial"></i>Data science and analysis</h5>
+                            <p class="card-text mb-0">
+                                Scientific inquiry is at the heart of {{ datasophos::logo(theme="dark") }} and we
+                                have extensive experience applying state of the art analysis techniques
+                                to unlock wisdom from data. If you have an interesting question you need support
+                                in answering, we can help.
+                            <div class="text-end">
+                                <button type="button" class="btn"
+                                        data-bs-toggle="modal" data-bs-target="#dataScience">
+                                    Click to learn more <i class="fa fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
