@@ -8,28 +8,43 @@
     }
 }
   
-#gradient:before {
-    content: "";
-    --size: 80vw;
-    --speed: 15s;
-    --easing: cubic-bezier(0.0, 0.2, 0.8, 0.8);
+@supports not (-moz-appearance: none) {
+    #gradient:before {
+        content: "";
+        --size: 80vw;
+        --speed: 15s;
+        --easing: cubic-bezier(0.0, 0.2, 0.8, 0.8);
 
-    width: var(--size);
-    height: 70vh;
-    filter: blur(calc(var(--size) / 4));
-    background-image: linear-gradient(rgba($light-teal, .7), rgba($white, 0.7));
-    animation: rotate var(--speed) var(--easing) alternate infinite;
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        width: var(--size);
+        height: 70vh;
+        filter: blur(calc(var(--size) / 4));
+        background-image: linear-gradient(rgba($light-teal, .7), rgba($white, 0.7));
+        animation: rotate var(--speed) var(--easing) alternate infinite;
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
 
-    // @media (min-width: $xs-breakpoint) {
-    //     --size: 400px;
-    // }
-    // @media (min-width: $sm-breakpoint) {
-    //     --size: #{$sm-breakpoint};
-    // }
-    // @media (min-width: $md-breakpoint) {
-    //     --size: #{$md-breakpoint};
-    // }
+        // @media (min-width: $xs-breakpoint) {
+        //     --size: 400px;
+        // }
+        // @media (min-width: $sm-breakpoint) {
+        //     --size: #{$sm-breakpoint};
+        // }
+        // @media (min-width: $md-breakpoint) {
+        //     --size: #{$md-breakpoint};
+        // }
+    }
+}
+@supports (-moz-appearance: none) {
+    .masthead {
+        background: linear-gradient(to bottom,
+        #{fade-out($black, 0.7)} 0%,
+        rgba($white, 0.01) 75%,
+        $black 100%),
+        url("../assets/img/bg-masthead.jpg") !important;
+
+        h3 {
+            color: rgba($black, .8) !important;
+        }
+    }
 }
 
 #gradient.hidden:before {

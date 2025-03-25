@@ -1,4 +1,29 @@
 {% extends "index.html" %}
+{% block navigation %}
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="{{ get_url(path='/') }}#page-top">
+                <img style="display: inline;" class="logo-light" src="{{ get_url(path='assets/img/datasophos_wordmark_light.png') }}" />
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+            aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+                {% for item in navigation.item %}
+                <li class="nav-itempdown">
+                    <a class="nav-link" href="{{ item.path | safe }}">{{ item.name }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</nav>
+{% endblock navigation %}
 {% block masthead %}
 {% endblock masthead %}
 {% block about_title %}404 Not Found{% endblock about_title %}
@@ -15,10 +40,14 @@ The page you are looking for was not found or no longer exists.
 </section>
 {% endblock about_description %}
 {% block about_image %}{% endblock about_image %}
+
 {% block projects %}{% endblock projects %}
+{% block services %}{% endblock services %}
 {% block signup %}{% endblock signup %}
 
-
+{% block footer_copyright %}
+    <div>&copy; CC-BY-SA-4.0 — {{ config.author }} {{ now() | date(format="%Y") }}</div>
+{% endblock footer_copyright %}
 <!-- remove social icons -->
 {% block contact_social %}
 {% endblock contact_social %}
