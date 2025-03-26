@@ -225,8 +225,7 @@
     <footer class="footer bg-black small text-center text-white-50">
         <div class="container px-4 px-lg-5">
             {% block footer_copyright %}
-                <div>&copy; CC-BY-SA-4.0 — {{ config.author }} {{ now() | date(format="%Y") }}</div>
-                <div><a target="_blank" href="https://commons.wikimedia.org/w/index.php?curid=3267545">Photo credit</a></div>
+                <div>&copy; CC-BY-SA-4.0 — {{ config.author }} {{ now() | date(format="%Y") }} — Boulder, CO</div>
             {% endblock footer_copyright %}</div>
         {% block extra_footer %}{% endblock extra_footer %}
         {% block footer_debug %}{{ debug::debug(context=__tera_context, name="__tera_context") }}{% endblock footer_debug %}

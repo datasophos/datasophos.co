@@ -52,4 +52,18 @@
             --p: 100%;
         }
     }
+
+    .card .modal {
+        * {
+            transition: none;
+        }
+
+        .img-col {
+            text-align: center;
+
+            img {
+                max-height: 20rem;
+            }
+        }
+    }
 }

@@ -15,192 +15,264 @@
         <div class="row row-cols-1 row-cols-md-2 g-4">
             <div class="col">
                 <div class="card h-100">
-                        <div class="modal fade" tabindex="-1" id="dataPipelines" >
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title"><i class="fa fas fa-timeline"></i> Data pipelines and workflows</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-
-<div class="container">
-    <div class="row align-items-center">
-        <div class="col-md-4">
-            <img src="{{ get_url(path='assets/img/data_pipelines.jpeg') }}" class="img-fluid img-thumbnail" alt="An illustrative image of a data pipeline">
-        </div>
-        <div class="col-md-8">
-            <p>
-                At {{ datasophos::logo(theme="dark", margin_right="-0.2rem") }}, we
-                have extensive experience building custom data pipelines to automate
-                workflows from disparate sources. No matter the scale of your data,
-                we can design workflows to help you gain insight, using custom solutions
-                and/or industry standard tools such as 
-                <a target="_blank" href="https://www.getdbt.com/product/what-is-dbt">dbt</a>
-                and <a target="_blank" href="https://airflow.apache.org/">Apache Airflow</a>.
-                Contact us today to learn how you can unlock the wisdom within your data
-                via workflow engineering.
-            </p>
-        </div>
-    </div>
-</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fa fas fa-timeline"></i> Data pipelines and workflows</h5>
-                            <p class="card-text mb-0">
-                                Modern organizations manage data across diverse domains, and consolidating this
-                                information
-                                can reveal previously-hidden insights.
-                                If your problems need custom data workflows, we can help.
-                            </p>
-                            <div class="text-end">
-                                <button type="button" class="btn"
-                                        data-bs-toggle="modal" data-bs-target="#dataPipelines">
-                                    Click to learn more <i class="fa fas fa-arrow-right"></i>
-                                </button>
-                            </div>
-                        </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <div class="modal fade" tabindex="-1" id="dataModeling" >
+                    <div class="modal fade" tabindex="-1" id="dataPipelines">
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title"><i class="fa fas fa-timeline"></i> Data modeling and database design</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    <h5 class="modal-title"><i class="fa fas fa-timeline"></i> Data pipelines and
+                                        workflows</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
 
-<div class="container">
-<div class="row align-items-center">
-    <div class="col-md-4">
-        <img src="{{ get_url(path='assets/img/data_modeling.jpeg') }}" class="img-fluid img-thumbnail" alt="An illustrative image of a data model">
-    </div>
-    <div class="col-md-8">
-        <p>
-            The right data model is crucial to understanding the requirements of the
-            task at hand, and pays dividends throughout your organization.
-            A suitable data model can help you identify relationships, organize your
-            data, facilitate decision making, and ensure data quality and consistency,
-            among many other benefits.
-            At {{ datasophos::logo(theme="dark", margin_right="-0.2rem") }}, we
-            are experts in modern data modeling languages such as 
-            <a href="https://linkml.io" target="_blank">LinkML</a> and understand how to 
-            translate your business or research needs into a formal model or database design.
-            Contact us today to learn how formalizing your data model can help
-            you reach your goals.
-        </p>
-    </div>
-</div>
-</div>
+                                    <!-- data pipeline modal -->
+                                    <div class="container">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-4 my-2 img-col">
+                                                <img src="{{ get_url(path='assets/img/data_pipelines.jpeg') }}"
+                                                    class="img-fluid img-thumbnail"
+                                                    alt="An illustrative image of a data pipeline">
+                                            </div>
+                                            <div class="col-lg-8 my-2">
+                                                <p>
+                                                    At {{ datasophos::logo(theme="dark", margin_right="-0.2rem") }}, we
+                                                    have extensive experience building custom data pipelines to automate
+                                                    workflows from disparate sources. No matter the scale of your data,
+                                                    we can design workflows to help you gain insight, using custom
+                                                    solutions
+                                                    and/or industry standard tools such as
+                                                    <a target="_blank"
+                                                        href="https://www.getdbt.com/product/what-is-dbt">dbt</a>
+                                                    and <a target="_blank" href="https://airflow.apache.org/">Apache
+                                                        Airflow</a>.
+                                                    Contact us today to learn how you can unlock the wisdom within your
+                                                    data
+                                                    via workflow engineering.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                        <!-- <img src="..." class="card-img-top" alt="..."> -->
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fa fas fa-swatchbook"></i> Data modeling and database design</h5>
-                            <p class="card-text mb-0">
-                                {{ datasophos::logo(theme="dark") }} knows that data works best when 
-                                its structure complements the needs of a given objective. 
-                                Whether you are starting a greenfield project or bringing fresh eyes
-                                to existing processes, we can help.
-                            <div class="text-end">
-                                <button type="button" class="btn"
-                                        data-bs-toggle="modal" data-bs-target="#dataModeling">
-                                    Click to learn more <i class="fa fas fa-arrow-right"></i>
-                                </button>
-                            </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title"><i class="fa fas fa-timeline"></i> Data pipelines and workflows</h5>
+                        <p class="card-text mb-0">
+                            Modern organizations manage data across diverse domains, and consolidating this
+                            information
+                            can reveal previously-hidden insights.
+                            If your problems need custom data workflows, we can help.
+                        </p>
+                        <div class="text-end mt-auto">
+                            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#dataPipelines">
+                                Click to learn more <i class="fa fas fa-arrow-right"></i>
+                            </button>
                         </div>
+                    </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card h-100">
-                        <div class="modal fade" tabindex="-1" id="openSource" >
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title"><i class="fa fas fa-computer"></i> Open source development and deployment</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-    
-    <div class="container">
-    <div class="row align-items-center">
-        <div class="col-md-4">
-            <a href="https://en.wikipedia.org/wiki/The_Open_Source_Definition" target="_blank">
-                <img src="{{ get_url(path='assets/img/open_source.svg') }}" class="img-fluid img-thumbnail" alt="The open source initiative logo">
-            </a>
-        </div>
-        <div class="col-md-8">
-            <p>
-                Today's open source ecosystem provides tools for nearly any need.
-                While open source software is typically free to use, organizations can
-                spend countless hours of staff time without a clear plan in place for software
-                deployment. At {{ datasophos::logo(theme="dark", margin_right="-0.2rem") }}, 
-                we have decades of experience using and deploying open sources solutions
-                and can provide tailored guidance and support throughout a deployment process,
-                ensuring seamless integration with your existing systems.
-            </p>
-            <p>
-                We have particular experience in deploying open-source facility and
-                data management solutions, such as 
-                <a href="https://github.com/usnistgov/NEMO" target="_blank">NEMO</a>, 
-                <a href="https://github.com/usnistgov/NexusLIMS" target="_blank">NexusLIMS</a>, and 
-                <a href="https://www.elabftw.net/" target="_blank">eLabFTW</a>.
-            </p>
-            <p>
-                Additionally, we are expert Python developers, and if you have a software
-                development task in mind, {{ datasophos::logo(theme="dark") }} can make it happen.
-            </p>
-        </div>
-    </div>
-    </div>
+                    <div class="modal fade" tabindex="-1" id="dataModeling">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title"><i class="fa fas fa-timeline"></i> Data modeling and
+                                        database design</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+
+                                    <!-- data modeling modal -->
+                                    <div class="container">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-4 my-2 img-col">
+                                                <img src="{{ get_url(path='assets/img/data_modeling.jpeg') }}"
+                                                    class="img-fluid img-thumbnail"
+                                                    alt="An illustrative image of a data model">
+                                            </div>
+                                            <div class="col-lg-8 my-2">
+                                                <p>
+                                                    The right data model is crucial to understanding the requirements of
+                                                    the
+                                                    task at hand, and pays dividends throughout your organization.
+                                                    A suitable data model can help you identify relationships, organize
+                                                    your
+                                                    data, facilitate decision making, and ensure data quality and
+                                                    consistency,
+                                                    among many other benefits.
+                                                    At {{ datasophos::logo(theme="dark", margin_right="-0.2rem") }}, we
+                                                    are experts in modern data modeling languages such as
+                                                    <a href="https://linkml.io" target="_blank">LinkML</a> and
+                                                    understand how to
+                                                    translate your business or research needs into a formal model or
+                                                    database design.
+                                                    Contact us today to learn how formalizing your data model can help
+                                                    you reach your goals.
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fa fas fa-computer"></i>Open source development and
-                                deployment</h5>
-                            <p class="card-text mb-0">
-                                Free software powers much of what we do at {{ datasophos::logo(theme="dark") }} and we
-                                believe strongly in the power of the open source community. If you are interested
-                                in deploying open source software or developing custom tools, we can help.
-                            <div class="text-end">
-                                <button type="button" class="btn"
-                                        data-bs-toggle="modal" data-bs-target="#openSource">
-                                    Click to learn more <i class="fa fas fa-arrow-right"></i>
-                                </button>
-                            </div>
+                    </div>
+                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title"><i class="fa fas fa-swatchbook"></i> Data modeling and database design
+                        </h5>
+                        <p class="card-text mb-0">
+                            {{ datasophos::logo(theme="dark") }} knows that data works best when
+                            its structure complements the needs of a given objective.
+                            Whether you are starting a greenfield project or bringing fresh eyes
+                            to existing processes, we can help.
+                        <div class="text-end mt-auto">
+                            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#dataModeling">
+                                Click to learn more <i class="fa fas fa-arrow-right"></i>
+                            </button>
                         </div>
+                    </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card h-100">
-                        {{ datasophos::modal(
-                        id='dataScience',
-                        title='<i class="fa fas fa-flask-vial"></i> Data science and analysis',
-                        content='') }}
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fa fas fa-flask-vial"></i>Data science and analysis</h5>
-                            <p class="card-text mb-0">
-                                Scientific inquiry is at the heart of {{ datasophos::logo(theme="dark") }} and we
-                                have extensive experience applying state of the art analysis techniques
-                                to unlock wisdom from data. If you have an interesting question you need support
-                                in answering, we can help.
-                            <div class="text-end">
-                                <button type="button" class="btn"
-                                        data-bs-toggle="modal" data-bs-target="#dataScience">
-                                    Click to learn more <i class="fa fas fa-arrow-right"></i>
-                                </button>
+
+                    <!-- open source modal -->
+                    <div class="modal fade" tabindex="-1" id="openSource">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title"><i class="fa fas fa-computer"></i> Open source development
+                                        and deployment</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-4 my-2 img-col">
+                                                <a href="https://en.wikipedia.org/wiki/The_Open_Source_Definition"
+                                                    target="_blank">
+                                                    <img src="{{ get_url(path='assets/img/open_source.svg') }}"
+                                                        class="img-fluid img-thumbnail"
+                                                        alt="The open source initiative logo">
+                                                </a>
+                                            </div>
+                                            <div class="col-lg-8 my-2">
+                                                <p>
+                                                    Today's open source ecosystem provides tools for nearly any need.
+                                                    While open source software is typically free to use, organizations
+                                                    can
+                                                    spend countless hours of staff time without a clear plan in place
+                                                    for software
+                                                    deployment. At {{ datasophos::logo(theme="dark",
+                                                    margin_right="-0.2rem") }},
+                                                    we have decades of experience using and deploying open sources
+                                                    solutions
+                                                    and can provide tailored guidance and support throughout a
+                                                    deployment process,
+                                                    ensuring seamless integration with your existing systems.
+                                                </p>
+                                                <p>
+                                                    We have particular experience in deploying open-source facility and
+                                                    data management solutions, such as
+                                                    <a href="https://github.com/usnistgov/NEMO"
+                                                        target="_blank">NEMO</a>,
+                                                    <a href="https://github.com/usnistgov/NexusLIMS"
+                                                        target="_blank">NexusLIMS</a>, and
+                                                    <a href="https://www.elabftw.net/" target="_blank">eLabFTW</a>.
+                                                </p>
+                                                <p>
+                                                    Additionally, we are expert Python developers, and if you have a
+                                                    software
+                                                    development task in mind, {{ datasophos::logo(theme="dark") }} can
+                                                    make it happen.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title"><i class="fa fas fa-computer"></i>Open source development and
+                            deployment</h5>
+                        <p class="card-text mb-0">
+                            Free software powers much of what we do at {{ datasophos::logo(theme="dark") }} and we
+                            believe strongly in the power of the open source community. If you are interested
+                            in deploying open source software or developing custom tools, we can help.
+                        <div class="text-end mt-auto">
+                            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#openSource">
+                                Click to learn more <i class="fa fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+
+<!-- data science and analysis modal -->
+<div class="modal fade" tabindex="-1" id="dataScience">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fa fas fa-flask-vial"></i> Data science, analysis, and training</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-4 my-2 img-col">
+                            <img src="{{ get_url(path='assets/img/data_science.jpeg') }}"
+                                class="img-fluid img-thumbnail"
+                                alt="An abstract representation of data science">
+                        </div>
+                        <div class="col-lg-8 my-2">
+                            <p>
+                                The team at {{ datasophos::logo(theme="dark") }} has a rich
+                                pedigree of scientific research experience, including advanced
+                                data analyses on highly multidimensional datasets. We specialize
+                                in using state-of-the-art open source tools to enable reproducible
+                                and traceable analyses. We can help with one-off studies or 
+                                the creation of data analysis tools (dashboards, apps, etc.)
+                                that enable your team to develop their own insights.
+                            </p>
+                            <p>
+                                Additionally, we are
+                                <a href="https://software-carpentry.org/" target="_blank">certified</a>
+                                in software engineering instruction, and have extensive experience
+                                teaching basic and advanced software concepts to technical audiences.
+                                Contact us today to learn more about how we can help with your analyses
+                                or upskilling your organization's staff.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title"><i class="fa fas fa-flask-vial"></i>Data science, analysis, and training</h5>
+                        <p class="card-text mb-0">
+                            Scientific inquiry is at the heart of {{ datasophos::logo(theme="dark") }} and we
+                            have extensive experience applying state of the art analysis techniques
+                            to unlock wisdom from data. If you have an interesting question you need support
+                            in answering, or training on how to do so, we can help.
+                        <div class="text-end mt-auto">
+                            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#dataScience">
+                                Click to learn more <i class="fa fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
