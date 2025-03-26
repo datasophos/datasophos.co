@@ -37,7 +37,7 @@
         }
     }
 
-    .card button {
+    .card-body > div > button {
         letter-spacing: .05rem;
         padding: 0.5rem 1rem;
         margin-top: $spacer;

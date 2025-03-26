@@ -1,6 +1,6 @@
-{% macro logo(theme) %}
+{% macro logo(theme, margin_right=0) %}
     <span class="datasophos {{theme}}">
-        <span class="thin">data</span><span class="thick">sophos</span>
+        <span class="thin">data</span><span class="thick" style="margin-right: {{margin_right}}">sophos</span>
     </span>
 {% endmacro input %}
 
