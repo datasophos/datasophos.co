@@ -7,10 +7,19 @@
 name = "Email"
 address = """<a href="mailto:josh@datasophos.co">josh@datasophos.co</a>"""
 icon = "fa-envelope"
+icon_pack = "fas"
 
-[[social]]
+[[contact]]
+name = "Online meeting"
+address = """<a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/josh-datasophos/30min?primary_color=1a4480'});return false;">Schedule a call</a>"""
+icon = "fa-calendar-days"
+icon_pack = "fas"
+
+[[contact]]
+name = "Find us on Github"
 icon = "fa-github"
-url = "https://github.com/datasophos"
+address = """<a href="https://github.com/datasophos" target="_blank">datasophos</a>"""
+icon_pack = "fab"
 
 #[[contact]]
 #name = "Phone"

@@ -1,0 +1,89 @@
+{% import "macros/datasophos.html" as datasophos %}
+
+<!-- Signup -->
+<section class="signup-section" id="{% block signup_id%}contact{% endblock signup_id %}">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5">
+            <div class="col-md-10 col-lg-8 mx-auto text-center">
+                <!-- Calendly link widget begin -->
+                <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+                <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+                
+                <!-- Calendly link widget end -->
+                <i class="fa-regular {% block signup_icon %}fa-paper-plane{% endblock signup_icon %} fa-2x mb-2 text-white"></i>
+                <h2 class="text-white mb-5">{% block signup_title %}Connect with us at {{ datasophos::logo(theme="light") }}{% endblock signup_title %}<span style="margin-left: -.2em;">!</span></h2>
+                <p class="mt-n4 mb-4">
+                    If you are interested in learning more about how we can help with your data needs,
+                    please fill out the following form and we will get in touch, or
+                    <a class="text-white-50" href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/josh-datasophos/30min?primary_color=1a4480'});return false;">schedule a time with us directly</a>.
+                </p>
+                <!-- Using formspree to handle form submissions -->
+            <form class="form-signup was-validated" 
+            id="contactForm" 
+            action="https://formspree.io/f/mwplqgov" 
+            method="POST">
+            <!-- Email address input-->
+            <div class="row input-group-newsletter">
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <input class="form-control" id="emailAddress" type="email" name="emailAddress" placeholder="Enter email address..." aria-label="Enter email address..." required>
+                            <div class="invalid-feedback">A valid email is required.</div>
+                            <div class="valid-feedback">Email is valid!</div>
+                        </div>
+                    </div>
+                    <div class="row mt-4 text-white">
+                        <h6 class="text-start">Optional inputs:</h6>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col">
+                        <input class="form-control optional" id="name" type="text" name="name" placeholder="Your name?" aria-label="Your name (only if you feel like sharing)?">
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col">
+                        <input class="form-control optional" id="heardAboutFrom" type="text" name="heardAboutFrom" placeholder="How did you hear about DataSophos?" aria-label="Where did you hear about our effort">
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col">  
+                            <textarea 
+                                placeholder="Please enter any questions or comments you have for us, and what you're looking for help with!"
+                                class="form-control optional"
+                                id="questionsAndComments" 
+                                name="questionsAndComments"></textarea>
+                        </div>
+                    </div>
+                    <div class="row mt-4 input-group-newsletter">
+                        <div class="col text-center">
+                        <button 
+                            class="btn btn-primary" 
+                            id="submitButton" 
+                            type="submit"
+                            data-toggle="tooltip" 
+                            data-placement="top" 
+                            title="This will send an email to us with your contact information via a third-party service (https://formspree.io/). If it makes you more comfortable, you can reach out directly to the nist.afge@proton.me email address instead."
+                        >
+                            Contact Us!
+                        </button>
+                        </div>
+                    </div>
+                </div>
+            <!-- Submit success message-->
+            <!---->
+            <!-- This is what your users will see when the form-->
+            <!-- has successfully submitted-->
+            <div class="d-none" id="submitSuccessMessage">
+                <div class="text-center mb-3 mt-2 text-white">
+                    <div class="fw-bolder">A message has been sent to the organizers, and someone should reach out to you soon!</div>
+                </div>
+            <!-- Submit error message-->
+            <!---->
+            <!-- This is what your users will see when there is-->
+            <!-- an error submitting the form-->
+            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3 mt-2">There was an issue sending the message! Please reach out via our email address below.</div></div>
+        </form>
+            </div>
+        </div>
+    </div>
+</section>
