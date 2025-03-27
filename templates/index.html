@@ -228,6 +228,7 @@
             {% block footer_copyright %}
                 <div>&copy; CC-BY-SA-4.0 — {{ config.author }} {{ now() | date(format="%Y") }} — Boulder, CO</div>
             {% endblock footer_copyright %}</div>
+            <div><em>Wisdom from data</em></div>
         {% block extra_footer %}{% endblock extra_footer %}
         {% block footer_debug %}{{ debug::debug(context=__tera_context, name="__tera_context") }}{% endblock footer_debug %}
     </footer>

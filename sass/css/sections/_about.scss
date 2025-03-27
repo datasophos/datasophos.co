@@ -18,4 +18,37 @@
     p {
         margin-bottom: 2.5rem;
     }
+
+    .btn > .datasophos {
+        text-transform: none;
+        letter-spacing: 0.1rem;
+        font-size: larger;
+    }
+
+    .modal {
+        * {
+            transition: none;
+        }
+
+        .portrait {
+            border-color: $blue;
+            border-width: 2px;
+            border-style: solid;
+            margin: 0 auto;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .modal-body {
+            text-align: left;
+        }
+
+        .img-col {
+            text-align: center;
+
+            img {
+                max-height: 20rem;
+            }
+        }
+    }
 }

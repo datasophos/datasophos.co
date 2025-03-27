@@ -21,8 +21,58 @@
 
                     {% endblock about_description %}
                 </p>
+                <div class="modal fade" tabindex="-1" id="whoIsDataSophos">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Who is {{ datasophos::logo(theme="dark", margin_right="-0.2rem") }}?</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-4 my-2 img-col">
+                                            <img src="{{ get_url(path='assets/img/josh_taillon.jpg') }}"
+                                                class="img-fluid portrait"
+                                                alt="A portrait image of Joshua Taillon">
+                                        </div>
+                                        <div class="col-lg-8 my-2">
+                                            <h3>Joshua A. Taillon, Ph.D.</h3>
+                                            <p class="my-2">
+                                                Josh is a data scientist and software engineer with a firm academic foundation in 
+                                                materials science. He performed his Ph.D. work in Materials Science and Engineering
+                                                at the University of Maryland, where he devised novel approaches to data analysis in 
+                                                analytical electron and ion beam microscopy. He then spent 9 years at <a href="https://nist.gov">NIST</a>
+                                                as a data science and engineering leader, publishing multiple peer-reviewed works on
+                                                modernizing data management in complex research environments.
+                                            </p>
+                                            <p class="my-2">    
+                                                After leaving NIST, Josh founded {{ datasophos::logo(theme="dark") }} in 2025
+                                                as a way to provide clients a way to access his expertise in more formal relationships.
+                                                With {{ datasophos::logo(theme="dark", margin_right="-0.2rem") }}, he helps clients 
+                                                navigate the open source landscape and builds custom solutions for their unique needs.
+                                            </p>
+                                            <p class="my-2">                                                 
+                                                For more information on Josh's personal and professional interests, please 
+                                                visit his personal website at: 
+                                                <a href="https://www.joshuataillon.com" target="_blank">https://www.joshuataillon.com</a>.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#whoIsDataSophos" id="servicesButton">Who is {{ datasophos::logo(theme="light", margin_right="-0.2rem") }}?</a>
+                </p>
+                
                 {% block about_button %}
-                <a class="btn btn-primary" href="#services" id="servicesButton">Learn about Our services</a>
+                <p>
+                    <a class="btn btn-primary" href="#services" id="servicesButton">Learn about Our services</a>
+                </p>
                 {% endblock about_button %}
             </div>
         </div>
