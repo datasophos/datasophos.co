@@ -23,3 +23,8 @@ $md-breakpoint: map.get($grid-breakpoints, md);
 $lg-breakpoint: map.get($grid-breakpoints, lg);
 $xl-breakpoint: map.get($grid-breakpoints, xl);
 $xxl-breakpoint: map.get($grid-breakpoints, xxl);
+
+body.modal-open {
+    padding-right: 0px !important
+}
+  
